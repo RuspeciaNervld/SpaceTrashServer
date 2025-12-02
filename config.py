@@ -32,7 +32,7 @@ CLIENT_B_OUTPUT_PATH_UnrecycleBin = './clientB/unrecycle_bin'
 CLIENT_B_CHECK_INTERVAL = 5  # 检查间隔（秒）
 
 # 客户端C配置
-CLIENT_C_SERVER_URL = 'http://169.254.152.193:5001/upload'  # serverB的端口
+CLIENT_C_SERVER_URL = 'http://183.172.25.74:5001/upload'  # serverB的端口
 CLIENT_C_CHECK_INTERVAL = 5  # 检查间隔（秒）
 CLIENT_C_JSON_FILENAME = "./clientC/data.json"  # 监控的JSON文件名
 CLIENT_C_GLB_FILENAME = "./clientC/model.glb"  # 监控的GLB文件名
