@@ -23,7 +23,8 @@ OUTPUT_FOLDER = './server/outputs'
 CLIENT_A_WATCH_PATH = './clientA/images'
 CLIENT_A_SERVER_URL = 'http://localhost:5000/upload'
 CLIENT_A_CHECK_INTERVAL = 5  # 检查间隔（秒）
-CLIENT_A_TARGET_FILENAME = "capture.png"  # 监控的特定文件名
+CLIENT_A_TARGET_FILENAMES = ["capture.png", "capture2.png"]  # 监控的特定文件名列表
+
 
 # 客户端B配置
 CLIENT_B_SERVER_URL = 'http://localhost:5000/sync'

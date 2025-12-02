@@ -212,17 +212,23 @@ def upload_image():
         return jsonify({"error": "No selected file"}), 400
 
     if file:
-        # 保存上传的图片
-        filename = f"upload_{int(time.time())}.png"
-        filepath = os.path.join(UPLOAD_FOLDER, filename)
+        # 获取原始文件名
+        original_filename = file.filename
+        
+        # 确保文件名以.png结尾
+        if not original_filename.lower().endswith('.png'):
+            original_filename = os.path.splitext(original_filename)[0] + '.png'
+        
+        # 保存上传的图片，使用原始文件名
+        filepath = os.path.join(UPLOAD_FOLDER, original_filename)
         file.save(filepath)
 
         # 直接触发ComfyUI工作流
-        workflow_status["running"] = True
-        workflow_status["result"] = None
-        threading.Thread(target=trigger_comfyui_workflow, args=(filepath,)).start()
+        # workflow_status["running"] = True
+        # workflow_status["result"] = None
+        # threading.Thread(target=trigger_comfyui_workflow, args=(filepath,)).start()
 
-        return jsonify({"message": "Image uploaded successfully", "workflow_started": True}), 200
+        return jsonify({"message": "Image uploaded successfully", "filename": original_filename, "workflow_started": True}), 200
 
 @app.route('/sync', methods=['GET'])
 def sync():
