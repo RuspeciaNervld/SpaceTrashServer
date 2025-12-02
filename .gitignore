@@ -1,3 +1,5 @@
 /.conda
 /.vscode
 /__pycache__
+*.png
+*.glb

@@ -30,3 +30,15 @@ CLIENT_B_SERVER_URL = 'http://localhost:5000/sync'
 CLIENT_B_OUTPUT_PATH_RecycleBin = './clientB/recycle_bin'
 CLIENT_B_OUTPUT_PATH_UnrecycleBin = './clientB/unrecycle_bin'
 CLIENT_B_CHECK_INTERVAL = 5  # 检查间隔（秒）
+
+# 客户端C配置
+CLIENT_C_SERVER_URL = 'http://localhost:5001/upload'  # serverB的端口
+CLIENT_C_CHECK_INTERVAL = 5  # 检查间隔（秒）
+CLIENT_C_JSON_FILENAME = "./clientC/data.json"  # 监控的JSON文件名
+CLIENT_C_GLB_FILENAME = "./clientC/model.glb"  # 监控的GLB文件名
+
+# 服务器B配置
+SERVER_B_HOST = '0.0.0.0'
+SERVER_B_PORT = 5001
+SERVER_B_OUTPUT_PATH_RecycleBin = os.path.abspath(os.path.join(os.path.dirname(__file__), 'serverB/recycle_bin'))
+SERVER_B_OUTPUT_PATH_UnrecycleBin = os.path.abspath(os.path.join(os.path.dirname(__file__), 'serverB/recycle_bin'))
